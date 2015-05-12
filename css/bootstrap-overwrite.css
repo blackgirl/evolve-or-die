@@ -1,0 +1,5 @@
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+	color: inherit;
+	background-color: white;
+	border-color: white;
+}
