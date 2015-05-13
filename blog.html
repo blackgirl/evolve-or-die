@@ -47,7 +47,7 @@
 		            <li><a href="info.html#links">Ссылки</a></li>
 		            <li><a href="info.html#adresses">Адреса и телефоны</a></li>
 		            <li class="divider"></li>
-		            <li><a href="info.html/#hb">Дни рождения</a></li>
+		            <li><a href="info.html#hb">Товарищи</a></li>
 		          </ul>
 		        </li>
 		      </ul>
@@ -57,246 +57,247 @@
 
 	</header>
 	<div class="container-fluid wall-paper">
-		<div class="col-md-1"></div>
-			<div class="col-md-9">
-		  		<div class="row">
-					<div class="col-xs-12 col-sm-12 blog-item post">
-		             	<img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="200x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzBEOEZEQiIvPjxnPjx0ZXh0IHg9Ijc0LjY4NzUiIHk9IjEwMCIgc3R5bGU9ImZpbGw6I0ZGRkZGRjtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMHB0O2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjIwMHgyMDA8L3RleHQ+PC9nPjwvc3ZnPg==" data-holder-rendered="true">
-		             	<h1>Web Typography: Using The Golden Ratio and REM’s</h1>
-		             	<p class="description">The REM is one of the newest font-size standards for CSS3. It stands for “Root EM”. You base your calculation on the default font-size of the HTML element – NOT the parent like EM. It’s basically «EM v2.0».</p>
-		             	<h2>Use the REM</h2>
-						<p>First you need to set a default “root” font-size variable:</p>
-						<pre>html {
-						    font-size: 62.5%
-						}</pre>
-						<p><em>Why 62.5% instead of 100%?</em> Simplicity.</p>
-						<p>Our default font is now 10px, which makes math easier.&nbsp;Now, 1.0rem = 10px. This becomes our <strong>$rembase</strong>.</p>
-						<p>Calculate other font sizes by dividing your desired size by the $rembase (in pixels). Let’s say, you want your &lt;h1&gt; tags to be 26px?</p>
-						<pre>26 ÷ 10 = 2.6rem</pre>
-						<p>or</p>
-						<pre>32 ÷ 10 = 3.2rem
-						48 ÷ 10 = 4.8rem</pre>
-						<p>and so on…Let’s take a look at a sample Stylesheet:</p>
-						<pre>/* $rembase = 10px */
-
-						html {
-						    font-size: 62.5%;
-						}
-
-						body {
-						    font-family: 'Helvetica Neue', Arial, sans-serif;
-						    font-size: 1.0rem; /* 10 ÷ $rembase */
-						}
-
-						h1,
-						h2 {
-						    font-size: 2.6rem; /* 26 ÷ $rembase */
-						}
-
-						h3,
-						h4 {
-						    font-size: 1.8rem; /* 18 ÷ $rembase */
-						}</pre>
-						<h2>Line-heights</h2>
-						<pre>26 ÷ 16 = 1.625</pre>
-						<pre>/*
-						$fontbase = 16
-						$line-height-base = 26
-						*/
-
-						html {
-						    font-size: 62.5%;
-						}
-
-						body {
-						    font-family: "Helvetica Neue", Arial, sans-serif;
-						    font-size: 1.6rem;
-						    line-height: 1.625; /* $line-height-base ÷ $fontbase */
-						}
-
-						h1,
-						h2 {
-						    font-size: 2.6rem;
-						    line-height: 1; /* $line-height-base ÷ 26 */
-						}
-
-						h3,
-						h4 {
-						    font-size: 1.8rem;
-						    line-height: 1.444 /* $line-height-base ÷ 18 */
-						}</pre>
-						<h2>Margins</h2>
-						<pre>24 ÷ 10 = 2.4rem</pre>
-						<pre>/*
-						$rembase = 10
-						$line-height-base = 26
-						*/
-
-						.some-div {
-						     margin: 2.4rem 0; /* 24 ÷ $rembase */
-						}
-
-						.another-div {
-						    padding: 4.8rem; /* 48 ÷ $rembase */
-						    margin-bottom: 2.4rem; /* 24 ÷ $rembase */
-						}</pre>
-						<p>As is the case with most CSS3 wizardry, REM support in IE 6, 7, and 8 is lacking and will require a PX fallback.&nbsp;By declaring REM’s after PX’s in the CSS this example &nbsp;will degrade gracefully to the PX:</p>
-						<pre>html {
-						    font-size: 62.5;
-						}
-
-						body {
-						    font-family: "Helvetica Neue", Arial, sans-serif;
-						    font-size: 16px;
-						    font-size: 1.6rem;
-						    line-height: 1.625;
-						}
-
-						h1,
-						h2 {
-						    font-size: 26px;
-						    font-size: 2.6rem;
-						}
-
-						h3,
-						h4 {
-						    font-size: 18px;
-						    font-size: 1.8rem;
-						    line-height: 1.444;
-						}
-
-						.some-div {
-						     margin: 24px 0;
-						     margin: 2.4rem 0;
-						}</pre>
-						<h3>PX to REM Sass Mixin</h3>
-						<pre class="line-pre"><div class="line" id="file-_mixins-scss-LC1"><span class="pl-c">// Create REM values with PX fall back</span>
-						</div><div class="line" id="file-_mixins-scss-LC2"><span class="pl-c">//</span>
-						</div><div class="line" id="file-_mixins-scss-LC3"><span class="pl-c">// Generate a REM with PX fallback from </span>
-						</div><div class="line" id="file-_mixins-scss-LC4"><span class="pl-c">// $baseFontSize. Enter the desired size based</span>
-						</div><div class="line" id="file-_mixins-scss-LC5"><span class="pl-c">// on pixels in numerical form. Supports shorthand.</span>
-						</div><div class="line" id="file-_mixins-scss-LC6"><span class="pl-c">//</span>
-						</div><div class="line" id="file-_mixins-scss-LC7"><span class="pl-c">// Forked from: http://codepen.io/thejameskyle/pen/JmBjc</span>
-						</div><div class="line" id="file-_mixins-scss-LC8"><span class="pl-c">//</span>
-						</div><div class="line" id="file-_mixins-scss-LC9"><span class="pl-c">// @author Greg Rickaby</span>
-						</div><div class="line" id="file-_mixins-scss-LC10"><span class="pl-c">// @since 1.0</span>
-						</div><div class="line" id="file-_mixins-scss-LC11"><span class="pl-c">//</span>
-						</div><div class="line" id="file-_mixins-scss-LC12"><span class="pl-c">// Usage: @include rem($property, $values);</span>
-						</div><div class="line" id="file-_mixins-scss-LC13"><span class="pl-c">// Example Usage:</span>
-						</div><div class="line" id="file-_mixins-scss-LC14"><span class="pl-c">//    @include rem(font-size, 16px);</span>
-						</div><div class="line" id="file-_mixins-scss-LC15"><span class="pl-c">//    @include rem(margin, 0 24px 0 12px);</span>
-						</div><div class="line" id="file-_mixins-scss-LC16"><span class="pl-c">//</span>
-						</div><div class="line" id="file-_mixins-scss-LC17"><span class="pl-c">// Outputs:</span>
-						</div><div class="line" id="file-_mixins-scss-LC18"><span class="pl-c">//    font-size: 16px;</span>
-						</div><div class="line" id="file-_mixins-scss-LC19"><span class="pl-c">//    font-size: 1.6rem;</span>
-						</div><div class="line" id="file-_mixins-scss-LC20"><span class="pl-c">//    margin: 0 24px 0 12px;</span>
-						</div><div class="line" id="file-_mixins-scss-LC21"><span class="pl-c">//    margin: 0 2.4rem 0 1.2rem;</span>
-						</div><div class="line" id="file-_mixins-scss-LC22"><span class="pl-c">// ----------------------------------</span>
-						</div><div class="line" id="file-_mixins-scss-LC23"><span class="pl-vo">$baseFontSize</span>: <span class="pl-c1">10</span>;<span class="pl-c"> // Based on HTML reset html { font-size: 62.5%; }</span>
-						</div><div class="line" id="file-_mixins-scss-LC24">&nbsp;
-						</div><div class="line" id="file-_mixins-scss-LC25"><span class="pl-k">@function</span> <span class="pl-s3">parseInt</span>(<span class="pl-vo">$n</span>) {
-						</div><div class="line" id="file-_mixins-scss-LC26">  <span class="pl-k">@return</span> <span class="pl-vo">$n</span> / (<span class="pl-vo">$n</span> *<span class="pl-c1"> 0</span> <span class="pl-c1">+ 1</span>);
-						</div><div class="line" id="file-_mixins-scss-LC27">}
-						</div><div class="line" id="file-_mixins-scss-LC28">&nbsp;
-						</div><div class="line" id="file-_mixins-scss-LC29"><span class="pl-k">@mixin</span> <span class="pl-en">rem</span>(<span class="pl-vo">$property</span>, <span class="pl-vo">$values</span>) {
-						</div><div class="line" id="file-_mixins-scss-LC30">	<span class="pl-vo">$px</span> : (); 
-						</div><div class="line" id="file-_mixins-scss-LC31">	<span class="pl-vo">$rem</span>: ();
-						</div><div class="line" id="file-_mixins-scss-LC32">	
-						</div><div class="line" id="file-_mixins-scss-LC33">	<span class="pl-vo">$root</span>: <span class="pl-vo">$baseFontSize</span>;
-						</div><div class="line" id="file-_mixins-scss-LC34">	
-						</div><div class="line" id="file-_mixins-scss-LC35">	<span class="pl-k">@each</span> <span class="pl-vo">$value</span> <span class="pl-k">in</span> <span class="pl-vo">$values</span> {
-						</div><div class="line" id="file-_mixins-scss-LC36">		<span class="pl-k">@if</span> <span class="pl-vo">$value</span> ==<span class="pl-c1"> 0</span><span class="pl-k"> or </span><span class="pl-vo">$value</span> == <span class="pl-sc">auto</span> {
-						</div><div class="line" id="file-_mixins-scss-LC37">			<span class="pl-vo">$px</span> : <span class="pl-s3">append</span>(<span class="pl-vo">$px</span> , <span class="pl-vo">$value</span>);
-						</div><div class="line" id="file-_mixins-scss-LC38">			<span class="pl-vo">$rem</span>: <span class="pl-s3">append</span>(<span class="pl-vo">$rem</span>, <span class="pl-vo">$value</span>);
-						</div><div class="line" id="file-_mixins-scss-LC39">		}
-						</div><div class="line" id="file-_mixins-scss-LC40">		
-						</div><div class="line" id="file-_mixins-scss-LC41">		<span class="pl-k">@else if</span> <span class="pl-s3">type-of</span>(<span class="pl-vo">$value</span>)<span class="pl-k"> == </span>number { 
-						</div><div class="line" id="file-_mixins-scss-LC42">			<span class="pl-vo">$unit</span>: <span class="pl-s3">unit</span>(<span class="pl-vo">$value</span>);
-						</div><div class="line" id="file-_mixins-scss-LC43">			<span class="pl-vo">$val</span>: <span class="pl-s3">parseInt</span>(<span class="pl-vo">$value</span>);
-						</div><div class="line" id="file-_mixins-scss-LC44">			
-						</div><div class="line" id="file-_mixins-scss-LC45">			<span class="pl-k">@if</span> <span class="pl-vo">$unit</span> == <span class="pl-s1"><span class="pl-pds">"</span>px<span class="pl-pds">"</span></span> {
-						</div><div class="line" id="file-_mixins-scss-LC46">				<span class="pl-vo">$px</span> : <span class="pl-s3">append</span>(<span class="pl-vo">$px</span>,  <span class="pl-vo">$value</span>);
-						</div><div class="line" id="file-_mixins-scss-LC47">				<span class="pl-vo">$rem</span>: <span class="pl-s3">append</span>(<span class="pl-vo">$rem</span>, <span class="pl-v">($val</span> <span class="pl-v">/</span> <span class="pl-vo">$root</span> <span class="pl-v">+</span> <span class="pl-v">rem</span>));
-						</div><div class="line" id="file-_mixins-scss-LC48">			}
-						</div><div class="line" id="file-_mixins-scss-LC49">			
-						</div><div class="line" id="file-_mixins-scss-LC50">			<span class="pl-k">@if</span> <span class="pl-vo">$unit</span> == <span class="pl-s1"><span class="pl-pds">"</span>rem<span class="pl-pds">"</span></span> {
-						</div><div class="line" id="file-_mixins-scss-LC51">				<span class="pl-vo">$px</span> : <span class="pl-s3">append</span>(<span class="pl-vo">$px</span>,  <span class="pl-v">($val</span> <span class="pl-v">*</span> <span class="pl-vo">$root</span> <span class="pl-v">+</span> <span class="pl-v">px</span>));
-						</div><div class="line" id="file-_mixins-scss-LC52">				<span class="pl-vo">$rem</span>: <span class="pl-s3">append</span>(<span class="pl-vo">$rem</span>, <span class="pl-vo">$value</span>);
-						</div><div class="line" id="file-_mixins-scss-LC53">			}
-						</div><div class="line" id="file-_mixins-scss-LC54">		}
-						</div><div class="line" id="file-_mixins-scss-LC55">		
-						</div><div class="line" id="file-_mixins-scss-LC56">		<span class="pl-k">@else </span>{
-						</div><div class="line" id="file-_mixins-scss-LC57">			<span class="pl-vo">$px</span> : <span class="pl-s3">append</span>(<span class="pl-vo">$px</span>,  <span class="pl-vo">$value</span>);
-						</div><div class="line" id="file-_mixins-scss-LC58">			<span class="pl-vo">$rem</span>: <span class="pl-s3">append</span>(<span class="pl-vo">$rem</span>, <span class="pl-vo">$value</span>);
-						</div><div class="line" id="file-_mixins-scss-LC59">		}
-						</div><div class="line" id="file-_mixins-scss-LC60">	}
-						</div><div class="line" id="file-_mixins-scss-LC61">	
-						</div><div class="line" id="file-_mixins-scss-LC62">	<span class="pl-k">@if</span> <span class="pl-vo">$px</span> == <span class="pl-vo">$rem</span> {
-						</div><div class="line" id="file-_mixins-scss-LC63">		<span class="pl-vo">#{<span class="pl-vo">$property</span>}</span>: <span class="pl-vo">$px</span>;
-						</div><div class="line" id="file-_mixins-scss-LC64">	} <span class="pl-k">@else </span>{
-						</div><div class="line" id="file-_mixins-scss-LC65">		<span class="pl-vo">#{<span class="pl-vo">$property</span>}</span>: <span class="pl-vo">$px</span>;
-						</div><div class="line" id="file-_mixins-scss-LC66">		<span class="pl-vo">#{<span class="pl-vo">$property</span>}</span>: <span class="pl-vo">$rem</span>;
-						</div><div class="line" id="file-_mixins-scss-LC67">	} 
-						</div><div class="line" id="file-_mixins-scss-LC68">}
-						</div><div class="line" id="file-_mixins-scss-LC69">&nbsp;
-						</div><div class="line" id="file-_mixins-scss-LC70"><span class="pl-k">@function</span> <span class="pl-s3">rem</span>(<span class="pl-vo">$value</span>) {
-						</div><div class="line" id="file-_mixins-scss-LC71">	<span class="pl-vo">$root</span>: <span class="pl-vo">$baseFontSize</span>;
-						</div><div class="line" id="file-_mixins-scss-LC72">	<span class="pl-vo">$val</span>: <span class="pl-s3">parseInt</span>(<span class="pl-vo">$value</span>);
-						</div><div class="line" id="file-_mixins-scss-LC73">	<span class="pl-vo">$return</span>: ();
-						</div><div class="line" id="file-_mixins-scss-LC74">	
-						</div><div class="line" id="file-_mixins-scss-LC75">	<span class="pl-k">@if</span> <span class="pl-s3">unit</span>(<span class="pl-vo">$value</span>)<span class="pl-k"> == </span><span class="pl-s1"><span class="pl-pds">"</span>px<span class="pl-pds">"</span></span> {
-						</div><div class="line" id="file-_mixins-scss-LC76">		<span class="pl-vo">$return</span>: <span class="pl-s3">append</span>(<span class="pl-vo">$return</span>, <span class="pl-v">($val</span> <span class="pl-v">/</span> <span class="pl-vo">$root</span> <span class="pl-v">+</span> <span class="pl-v">rem</span>));
-						</div><div class="line" id="file-_mixins-scss-LC77">	} <span class="pl-k">@else </span>{
-						</div><div class="line" id="file-_mixins-scss-LC78">		<span class="pl-vo">$return</span>: <span class="pl-s3">append</span>(<span class="pl-vo">$return</span>, <span class="pl-v">($val</span> <span class="pl-v">*</span> <span class="pl-vo">$root</span> <span class="pl-v">+</span> <span class="pl-v">px</span>));
-						</div><div class="line" id="file-_mixins-scss-LC79">	}
-						</div><div class="line" id="file-_mixins-scss-LC80">	
-						</div><div class="line" id="file-_mixins-scss-LC81">	<span class="pl-k">@return</span> <span class="pl-vo">$return</span>;
-						</div><div class="line" id="file-_mixins-scss-LC82">}
-						</div></pre>
-						<div class="post-footer links-tags">
-							<p class="links"><span class="link">Original: <a href="http://gregrickaby.com/using-the-golden-ratio-and-rems/">Greg Rickaby's BVlog</a></span></p>
-							<p class="tags">
-								<span class="tag">#typography</span>
-								<span class="tag">#web</span>
-								<span class="tag">#css</span>
-								<span class="tag">#fonts</span>
-								<span class="tag">#hack</span>
-							</p>
-						</div>
-		            </div>
-			</div>
-			
-			<div class="row">
-				<div class="col-xs-12 col-md-4 placeholder">
-					<a href="blog.html#id1" class="post-navigation post-navigation--next">
-		              <h4>Web Typography: Using The Golden Ratio and REM’s</h4>
-		              <span class="text-muted">The REM is one of the newest font-size standards for CSS3. It stands for “Root EM”. You base your calculation on the default font-size of the HTML element – NOT the parent like EM. It’s basically «EM v2.0».</span>
-		          	</a>
-	            </div>
-	            <div class="col-xs-12 col-md-4 placeholder">
-					<a href="blog.html#id2" class="post-navigation post-navigation--next">
-		              <h4>Web Typography: Using The Golden Ratio and REM’s</h4>
-		              <span class="text-muted">The REM is one of the newest font-size standards for CSS3. It stands for “Root EM”. You base your calculation on the default font-size of the HTML element – NOT the parent like EM. It’s basically «EM v2.0».</span>
-		          	</a>
-	            </div>
-	            <div class="col-xs-12 col-md-4 placeholder">
-					<a href="blog.html#id3" class="post-navigation post-navigation--next">
-		              <h4>Web Typography: Using The Golden Ratio and REM’s</h4>
-		              <span class="text-muted">The REM is one of the newest font-size standards for CSS3. It stands for “Root EM”. You base your calculation on the default font-size of the HTML element – NOT the parent like EM. It’s basically «EM v2.0».</span>
-		          	</a>
-	            </div>
-			</div>
-		</div>
-		<div class="col-md-2">
+		<div class="col-xs-6 col-md-1 left-panel"></div>
+		<div class="col-xs-6 col-md-2 right-panel">
 			<ul class="tag-list">
-			  <li><a href="#" class="list-item active">#tag1</a></li>
-			  <li><a href="#" class="list-item">#tag2</a></li>
-			  <li><a href="#" class="list-item">#tag3</a></li>
-			  <li><a href="#" class="list-item">#tag4</a></li>
-			  <li><a href="#" class="list-item">#tag5</a></li>
+			  	<li><a href="#" class="list-item active">#tag1</a></li>
+			  	<li><a href="#" class="list-item">#tag2</a></li>
+			  	<li><a href="#" class="list-item">#tag3</a></li>
+			  	<li><a href="#" class="list-item">#tag4</a></li>
+			  	<li><a href="#" class="list-item">#tag5</a></li>
 			</ul>
 		</div>
+		<div class="col-xs-12 col-md-9">
+	  		<div class="row">
+				<div class="col-xs-12 col-sm-12 blog-item post">
+	             	<img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="200x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzBEOEZEQiIvPjxnPjx0ZXh0IHg9Ijc0LjY4NzUiIHk9IjEwMCIgc3R5bGU9ImZpbGw6I0ZGRkZGRjtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMHB0O2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjIwMHgyMDA8L3RleHQ+PC9nPjwvc3ZnPg==" data-holder-rendered="true">
+	             	<h1>Web Typography: Using The Golden Ratio and REM’s</h1>
+	             	<p class="description">The REM is one of the newest font-size standards for CSS3. It stands for “Root EM”. You base your calculation on the default font-size of the HTML element – NOT the parent like EM. It’s basically «EM v2.0».</p>
+	             	<h2>Use the REM</h2>
+					<p>First you need to set a default “root” font-size variable:</p>
+					<pre>html {
+					    font-size: 62.5%
+					}</pre>
+					<p><em>Why 62.5% instead of 100%?</em> Simplicity.</p>
+					<p>Our default font is now 10px, which makes math easier.&nbsp;Now, 1.0rem = 10px. This becomes our <strong>$rembase</strong>.</p>
+					<p>Calculate other font sizes by dividing your desired size by the $rembase (in pixels). Let’s say, you want your &lt;h1&gt; tags to be 26px?</p>
+					<pre>26 ÷ 10 = 2.6rem</pre>
+					<p>or</p>
+					<pre>32 ÷ 10 = 3.2rem
+					48 ÷ 10 = 4.8rem</pre>
+					<p>and so on…Let’s take a look at a sample Stylesheet:</p>
+					<pre>/* $rembase = 10px */
+
+					html {
+					    font-size: 62.5%;
+					}
+
+					body {
+					    font-family: 'Helvetica Neue', Arial, sans-serif;
+					    font-size: 1.0rem; /* 10 ÷ $rembase */
+					}
+
+					h1,
+					h2 {
+					    font-size: 2.6rem; /* 26 ÷ $rembase */
+					}
+
+					h3,
+					h4 {
+					    font-size: 1.8rem; /* 18 ÷ $rembase */
+					}</pre>
+					<h2>Line-heights</h2>
+					<pre>26 ÷ 16 = 1.625</pre>
+					<pre>/*
+					$fontbase = 16
+					$line-height-base = 26
+					*/
+
+					html {
+					    font-size: 62.5%;
+					}
+
+					body {
+					    font-family: "Helvetica Neue", Arial, sans-serif;
+					    font-size: 1.6rem;
+					    line-height: 1.625; /* $line-height-base ÷ $fontbase */
+					}
+
+					h1,
+					h2 {
+					    font-size: 2.6rem;
+					    line-height: 1; /* $line-height-base ÷ 26 */
+					}
+
+					h3,
+					h4 {
+					    font-size: 1.8rem;
+					    line-height: 1.444 /* $line-height-base ÷ 18 */
+					}</pre>
+					<h2>Margins</h2>
+					<pre>24 ÷ 10 = 2.4rem</pre>
+					<pre>/*
+					$rembase = 10
+					$line-height-base = 26
+					*/
+
+					.some-div {
+					     margin: 2.4rem 0; /* 24 ÷ $rembase */
+					}
+
+					.another-div {
+					    padding: 4.8rem; /* 48 ÷ $rembase */
+					    margin-bottom: 2.4rem; /* 24 ÷ $rembase */
+					}</pre>
+					<p>As is the case with most CSS3 wizardry, REM support in IE 6, 7, and 8 is lacking and will require a PX fallback.&nbsp;By declaring REM’s after PX’s in the CSS this example &nbsp;will degrade gracefully to the PX:</p>
+					<pre>html {
+					    font-size: 62.5;
+					}
+
+					body {
+					    font-family: "Helvetica Neue", Arial, sans-serif;
+					    font-size: 16px;
+					    font-size: 1.6rem;
+					    line-height: 1.625;
+					}
+
+					h1,
+					h2 {
+					    font-size: 26px;
+					    font-size: 2.6rem;
+					}
+
+					h3,
+					h4 {
+					    font-size: 18px;
+					    font-size: 1.8rem;
+					    line-height: 1.444;
+					}
+
+					.some-div {
+					     margin: 24px 0;
+					     margin: 2.4rem 0;
+					}</pre>
+					<h3>PX to REM Sass Mixin</h3>
+					<pre class="line-pre"><div class="line" id="file-_mixins-scss-LC1"><span class="pl-c">// Create REM values with PX fall back</span>
+					</div><div class="line" id="file-_mixins-scss-LC2"><span class="pl-c">//</span>
+					</div><div class="line" id="file-_mixins-scss-LC3"><span class="pl-c">// Generate a REM with PX fallback from </span>
+					</div><div class="line" id="file-_mixins-scss-LC4"><span class="pl-c">// $baseFontSize. Enter the desired size based</span>
+					</div><div class="line" id="file-_mixins-scss-LC5"><span class="pl-c">// on pixels in numerical form. Supports shorthand.</span>
+					</div><div class="line" id="file-_mixins-scss-LC6"><span class="pl-c">//</span>
+					</div><div class="line" id="file-_mixins-scss-LC7"><span class="pl-c">// Forked from: http://codepen.io/thejameskyle/pen/JmBjc</span>
+					</div><div class="line" id="file-_mixins-scss-LC8"><span class="pl-c">//</span>
+					</div><div class="line" id="file-_mixins-scss-LC9"><span class="pl-c">// @author Greg Rickaby</span>
+					</div><div class="line" id="file-_mixins-scss-LC10"><span class="pl-c">// @since 1.0</span>
+					</div><div class="line" id="file-_mixins-scss-LC11"><span class="pl-c">//</span>
+					</div><div class="line" id="file-_mixins-scss-LC12"><span class="pl-c">// Usage: @include rem($property, $values);</span>
+					</div><div class="line" id="file-_mixins-scss-LC13"><span class="pl-c">// Example Usage:</span>
+					</div><div class="line" id="file-_mixins-scss-LC14"><span class="pl-c">//    @include rem(font-size, 16px);</span>
+					</div><div class="line" id="file-_mixins-scss-LC15"><span class="pl-c">//    @include rem(margin, 0 24px 0 12px);</span>
+					</div><div class="line" id="file-_mixins-scss-LC16"><span class="pl-c">//</span>
+					</div><div class="line" id="file-_mixins-scss-LC17"><span class="pl-c">// Outputs:</span>
+					</div><div class="line" id="file-_mixins-scss-LC18"><span class="pl-c">//    font-size: 16px;</span>
+					</div><div class="line" id="file-_mixins-scss-LC19"><span class="pl-c">//    font-size: 1.6rem;</span>
+					</div><div class="line" id="file-_mixins-scss-LC20"><span class="pl-c">//    margin: 0 24px 0 12px;</span>
+					</div><div class="line" id="file-_mixins-scss-LC21"><span class="pl-c">//    margin: 0 2.4rem 0 1.2rem;</span>
+					</div><div class="line" id="file-_mixins-scss-LC22"><span class="pl-c">// ----------------------------------</span>
+					</div><div class="line" id="file-_mixins-scss-LC23"><span class="pl-vo">$baseFontSize</span>: <span class="pl-c1">10</span>;<span class="pl-c"> // Based on HTML reset html { font-size: 62.5%; }</span>
+					</div><div class="line" id="file-_mixins-scss-LC24">&nbsp;
+					</div><div class="line" id="file-_mixins-scss-LC25"><span class="pl-k">@function</span> <span class="pl-s3">parseInt</span>(<span class="pl-vo">$n</span>) {
+					</div><div class="line" id="file-_mixins-scss-LC26">  <span class="pl-k">@return</span> <span class="pl-vo">$n</span> / (<span class="pl-vo">$n</span> *<span class="pl-c1"> 0</span> <span class="pl-c1">+ 1</span>);
+					</div><div class="line" id="file-_mixins-scss-LC27">}
+					</div><div class="line" id="file-_mixins-scss-LC28">&nbsp;
+					</div><div class="line" id="file-_mixins-scss-LC29"><span class="pl-k">@mixin</span> <span class="pl-en">rem</span>(<span class="pl-vo">$property</span>, <span class="pl-vo">$values</span>) {
+					</div><div class="line" id="file-_mixins-scss-LC30">	<span class="pl-vo">$px</span> : (); 
+					</div><div class="line" id="file-_mixins-scss-LC31">	<span class="pl-vo">$rem</span>: ();
+					</div><div class="line" id="file-_mixins-scss-LC32">	
+					</div><div class="line" id="file-_mixins-scss-LC33">	<span class="pl-vo">$root</span>: <span class="pl-vo">$baseFontSize</span>;
+					</div><div class="line" id="file-_mixins-scss-LC34">	
+					</div><div class="line" id="file-_mixins-scss-LC35">	<span class="pl-k">@each</span> <span class="pl-vo">$value</span> <span class="pl-k">in</span> <span class="pl-vo">$values</span> {
+					</div><div class="line" id="file-_mixins-scss-LC36">		<span class="pl-k">@if</span> <span class="pl-vo">$value</span> ==<span class="pl-c1"> 0</span><span class="pl-k"> or </span><span class="pl-vo">$value</span> == <span class="pl-sc">auto</span> {
+					</div><div class="line" id="file-_mixins-scss-LC37">			<span class="pl-vo">$px</span> : <span class="pl-s3">append</span>(<span class="pl-vo">$px</span> , <span class="pl-vo">$value</span>);
+					</div><div class="line" id="file-_mixins-scss-LC38">			<span class="pl-vo">$rem</span>: <span class="pl-s3">append</span>(<span class="pl-vo">$rem</span>, <span class="pl-vo">$value</span>);
+					</div><div class="line" id="file-_mixins-scss-LC39">		}
+					</div><div class="line" id="file-_mixins-scss-LC40">		
+					</div><div class="line" id="file-_mixins-scss-LC41">		<span class="pl-k">@else if</span> <span class="pl-s3">type-of</span>(<span class="pl-vo">$value</span>)<span class="pl-k"> == </span>number { 
+					</div><div class="line" id="file-_mixins-scss-LC42">			<span class="pl-vo">$unit</span>: <span class="pl-s3">unit</span>(<span class="pl-vo">$value</span>);
+					</div><div class="line" id="file-_mixins-scss-LC43">			<span class="pl-vo">$val</span>: <span class="pl-s3">parseInt</span>(<span class="pl-vo">$value</span>);
+					</div><div class="line" id="file-_mixins-scss-LC44">			
+					</div><div class="line" id="file-_mixins-scss-LC45">			<span class="pl-k">@if</span> <span class="pl-vo">$unit</span> == <span class="pl-s1"><span class="pl-pds">"</span>px<span class="pl-pds">"</span></span> {
+					</div><div class="line" id="file-_mixins-scss-LC46">				<span class="pl-vo">$px</span> : <span class="pl-s3">append</span>(<span class="pl-vo">$px</span>,  <span class="pl-vo">$value</span>);
+					</div><div class="line" id="file-_mixins-scss-LC47">				<span class="pl-vo">$rem</span>: <span class="pl-s3">append</span>(<span class="pl-vo">$rem</span>, <span class="pl-v">($val</span> <span class="pl-v">/</span> <span class="pl-vo">$root</span> <span class="pl-v">+</span> <span class="pl-v">rem</span>));
+					</div><div class="line" id="file-_mixins-scss-LC48">			}
+					</div><div class="line" id="file-_mixins-scss-LC49">			
+					</div><div class="line" id="file-_mixins-scss-LC50">			<span class="pl-k">@if</span> <span class="pl-vo">$unit</span> == <span class="pl-s1"><span class="pl-pds">"</span>rem<span class="pl-pds">"</span></span> {
+					</div><div class="line" id="file-_mixins-scss-LC51">				<span class="pl-vo">$px</span> : <span class="pl-s3">append</span>(<span class="pl-vo">$px</span>,  <span class="pl-v">($val</span> <span class="pl-v">*</span> <span class="pl-vo">$root</span> <span class="pl-v">+</span> <span class="pl-v">px</span>));
+					</div><div class="line" id="file-_mixins-scss-LC52">				<span class="pl-vo">$rem</span>: <span class="pl-s3">append</span>(<span class="pl-vo">$rem</span>, <span class="pl-vo">$value</span>);
+					</div><div class="line" id="file-_mixins-scss-LC53">			}
+					</div><div class="line" id="file-_mixins-scss-LC54">		}
+					</div><div class="line" id="file-_mixins-scss-LC55">		
+					</div><div class="line" id="file-_mixins-scss-LC56">		<span class="pl-k">@else </span>{
+					</div><div class="line" id="file-_mixins-scss-LC57">			<span class="pl-vo">$px</span> : <span class="pl-s3">append</span>(<span class="pl-vo">$px</span>,  <span class="pl-vo">$value</span>);
+					</div><div class="line" id="file-_mixins-scss-LC58">			<span class="pl-vo">$rem</span>: <span class="pl-s3">append</span>(<span class="pl-vo">$rem</span>, <span class="pl-vo">$value</span>);
+					</div><div class="line" id="file-_mixins-scss-LC59">		}
+					</div><div class="line" id="file-_mixins-scss-LC60">	}
+					</div><div class="line" id="file-_mixins-scss-LC61">	
+					</div><div class="line" id="file-_mixins-scss-LC62">	<span class="pl-k">@if</span> <span class="pl-vo">$px</span> == <span class="pl-vo">$rem</span> {
+					</div><div class="line" id="file-_mixins-scss-LC63">		<span class="pl-vo">#{<span class="pl-vo">$property</span>}</span>: <span class="pl-vo">$px</span>;
+					</div><div class="line" id="file-_mixins-scss-LC64">	} <span class="pl-k">@else </span>{
+					</div><div class="line" id="file-_mixins-scss-LC65">		<span class="pl-vo">#{<span class="pl-vo">$property</span>}</span>: <span class="pl-vo">$px</span>;
+					</div><div class="line" id="file-_mixins-scss-LC66">		<span class="pl-vo">#{<span class="pl-vo">$property</span>}</span>: <span class="pl-vo">$rem</span>;
+					</div><div class="line" id="file-_mixins-scss-LC67">	} 
+					</div><div class="line" id="file-_mixins-scss-LC68">}
+					</div><div class="line" id="file-_mixins-scss-LC69">&nbsp;
+					</div><div class="line" id="file-_mixins-scss-LC70"><span class="pl-k">@function</span> <span class="pl-s3">rem</span>(<span class="pl-vo">$value</span>) {
+					</div><div class="line" id="file-_mixins-scss-LC71">	<span class="pl-vo">$root</span>: <span class="pl-vo">$baseFontSize</span>;
+					</div><div class="line" id="file-_mixins-scss-LC72">	<span class="pl-vo">$val</span>: <span class="pl-s3">parseInt</span>(<span class="pl-vo">$value</span>);
+					</div><div class="line" id="file-_mixins-scss-LC73">	<span class="pl-vo">$return</span>: ();
+					</div><div class="line" id="file-_mixins-scss-LC74">	
+					</div><div class="line" id="file-_mixins-scss-LC75">	<span class="pl-k">@if</span> <span class="pl-s3">unit</span>(<span class="pl-vo">$value</span>)<span class="pl-k"> == </span><span class="pl-s1"><span class="pl-pds">"</span>px<span class="pl-pds">"</span></span> {
+					</div><div class="line" id="file-_mixins-scss-LC76">		<span class="pl-vo">$return</span>: <span class="pl-s3">append</span>(<span class="pl-vo">$return</span>, <span class="pl-v">($val</span> <span class="pl-v">/</span> <span class="pl-vo">$root</span> <span class="pl-v">+</span> <span class="pl-v">rem</span>));
+					</div><div class="line" id="file-_mixins-scss-LC77">	} <span class="pl-k">@else </span>{
+					</div><div class="line" id="file-_mixins-scss-LC78">		<span class="pl-vo">$return</span>: <span class="pl-s3">append</span>(<span class="pl-vo">$return</span>, <span class="pl-v">($val</span> <span class="pl-v">*</span> <span class="pl-vo">$root</span> <span class="pl-v">+</span> <span class="pl-v">px</span>));
+					</div><div class="line" id="file-_mixins-scss-LC79">	}
+					</div><div class="line" id="file-_mixins-scss-LC80">	
+					</div><div class="line" id="file-_mixins-scss-LC81">	<span class="pl-k">@return</span> <span class="pl-vo">$return</span>;
+					</div><div class="line" id="file-_mixins-scss-LC82">}
+					</div></pre>
+					<div class="post-footer links-tags">
+						<p class="links"><span class="link">Original: <a href="http://gregrickaby.com/using-the-golden-ratio-and-rems/">Greg Rickaby's BVlog</a></span></p>
+						<p class="tags">
+							<span class="tag">#typography</span>
+							<span class="tag">#web</span>
+							<span class="tag">#css</span>
+							<span class="tag">#fonts</span>
+							<span class="tag">#hack</span>
+						</p>
+					</div>
+	            </div>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-12 col-md-4 placeholder">
+				<a href="blog.html#id1" class="post-navigation post-navigation--next">
+	              <h4>Web Typography: Using The Golden Ratio and REM’s</h4>
+	              <span class="text-muted">The REM is one of the newest font-size standards for CSS3. It stands for “Root EM”. You base your calculation on the default font-size of the HTML element – NOT the parent like EM. It’s basically «EM v2.0».</span>
+	          	</a>
+            </div>
+            <div class="col-xs-12 col-md-4 placeholder">
+				<a href="blog.html#id2" class="post-navigation post-navigation--next">
+	              <h4>Web Typography: Using The Golden Ratio and REM’s</h4>
+	              <span class="text-muted">The REM is one of the newest font-size standards for CSS3. It stands for “Root EM”. You base your calculation on the default font-size of the HTML element – NOT the parent like EM. It’s basically «EM v2.0».</span>
+	          	</a>
+            </div>
+            <div class="col-xs-12 col-md-4 placeholder">
+				<a href="blog.html#id3" class="post-navigation post-navigation--next">
+	              <h4>Web Typography: Using The Golden Ratio and REM’s</h4>
+	              <span class="text-muted">The REM is one of the newest font-size standards for CSS3. It stands for “Root EM”. You base your calculation on the default font-size of the HTML element – NOT the parent like EM. It’s basically «EM v2.0».</span>
+	          	</a>
+            </div>
+		</div>
 	</div>
+		
+</div>
 
 </body>
 </html>

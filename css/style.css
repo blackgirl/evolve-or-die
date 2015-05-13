@@ -45,6 +45,10 @@ h2 {
 h3 {
 	font-size: 1.2em;
 }
+
+.right-panel {
+	float: right;
+}
 /* Main page */
 .navbar-inverse {
 	color: white;
@@ -165,6 +169,20 @@ ul.tag-list {
 	background: white;
 	padding: 15px;
 	margin: 20px 0;
+}
+#tables ul.tag-list {
+	margin: 0;
+}
+#links ul {
+	text-align: left;
+}
+
+#links p,
+#hb .table-hb p {
+	margin: 0px;
+}
+#links li {
+	margin-bottom: 15px;
 }
 
 
