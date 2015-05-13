@@ -3,3 +3,59 @@
 	background-color: white;
 	border-color: white;
 }
+
+
+@media (min-width: 1200px) {
+
+}
+
+@media (max-width: 980px) {
+	
+}
+
+@media (max-width: 760px) {
+	.dropdown-menu {
+		text-align: right;
+		padding: 0;
+	}
+	.navbar-inverse .navbar-nav .open .dropdown-menu .divider {
+		margin: 0;
+		background-color: #09c;
+	}
+	.navbar-collapse.in {
+		overflow-y: visible;
+	}
+	.navbar-collapse.in ,
+	.navbar-nav .open .dropdown-menu {
+		background: #333;
+	}
+
+	.navbar-nav .open .dropdown-menu .dropdown-header, .navbar-nav .open .dropdown-menu>li>a {
+		padding: 10px 30px;
+	}
+	.nav > li {
+		z-index:2;
+	}
+	.nav > li > a,
+	.dropdown.open a {
+		background: #333;
+		position: relative;
+		display: block;
+		padding: 10px 15px;
+		z-index: 2;
+		color: #ccc !important;
+	}
+
+	.nav > li:not(.active) > a:hover,
+	.dropdown.open a:hover {
+		background: #337ab7 !important;
+		color: white !important;
+	}
+	.nav > li.active > a {
+		background: #09c !important;
+		color: white !important;
+	}
+
+@media (max-width: 480px) {
+	
+}

@@ -122,7 +122,7 @@ ul.tag-list {
 	margin-bottom: 1.71875em;
 	padding: 40px;
 	display: block;
-	background-color: #FFF;
+	background-color: white;
 }
 .post-navigation::before {
 	content: '';
